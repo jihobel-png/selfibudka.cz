@@ -10,9 +10,6 @@
   <link rel="canonical" href="https://selfibudka.cz/">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/hero-selfibudka.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:locale" content="cs_CZ">
@@ -304,7 +301,7 @@
           </div>
           <label>Přibližný počet hostů<input type="number" name="guests" min="1" inputmode="numeric"></label>
           <label>Co je pro vás důležité?<textarea name="message" rows="4" placeholder="Napište nám svou představu, délku akce nebo požadavky na grafiku."></textarea></label>
-          <label class="consent"><input type="checkbox" name="consent" required><span>Souhlasím se zpracováním údajů za účelem vyřízení poptávky. <a href="ochrana-osobnich-udaju.html">Více informací</a>.</span></label>
+          <p class="consent-info">Vytvořením e-mailu potvrzujete, že jste se seznámili se <a href="ochrana-osobnich-udaju.html">zásadami ochrany osobních údajů</a>. Údaje slouží pouze k vyřízení poptávky.</p>
           <button class="button button-full" type="submit">Vytvořit poptávku</button>
           <p class="form-note" data-form-status>Po kliknutí se otevře nový e-mail s předvyplněnou poptávkou.</p>
         </form>
@@ -320,10 +317,21 @@
     </div>
     <div class="container footer-bottom">
       <p>© <span data-year>2026</span> Selfíbudka.cz</p>
-      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="#galerie">Galerie</a><a href="#faq">FAQ</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a></nav>
-      <p>Web bez sledovacích cookies</p>
+      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="#galerie">Galerie</a><a href="#faq">FAQ</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a></nav>
+      <button class="footer-privacy-button" type="button" data-privacy-open>Nastavení soukromí</button>
     </div>
   </footer>
+
+  <aside class="privacy-bar" data-privacy-notice hidden aria-label="Informace o soukromí">
+    <div class="privacy-bar-inner">
+      <div>
+        <strong>Soukromí bez sledování</strong>
+        <p>Web nepoužívá analytické ani marketingové cookies. Ukládá pouze technickou volbu, zda jste tuto informaci zavřeli.</p>
+      </div>
+      <a href="cookies.html">Více informací</a>
+      <button class="button button-small" type="button" data-privacy-close>Rozumím</button>
+    </div>
+  </aside>
 
   <dialog class="lightbox" data-lightbox aria-label="Náhled fotografie">
     <button type="button" aria-label="Zavřít fotografii" data-lightbox-close>×</button>

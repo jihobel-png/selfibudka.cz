@@ -87,4 +87,37 @@
   });
 
   document.querySelectorAll('[data-year]').forEach(node => { node.textContent = String(new Date().getFullYear()); });
+
+  const privacyNotice = document.querySelector('[data-privacy-notice]');
+  const privacyStorageKey = 'selfibudka_privacy_notice_v1';
+  const privacyMaxAge = 180 * 24 * 60 * 60 * 1000;
+
+  const showPrivacyNotice = () => {
+    if (!privacyNotice) return;
+    privacyNotice.hidden = false;
+    requestAnimationFrame(() => privacyNotice.classList.add('is-visible'));
+  };
+
+  const hidePrivacyNotice = () => {
+    if (!privacyNotice) return;
+    privacyNotice.classList.remove('is-visible');
+    window.setTimeout(() => { privacyNotice.hidden = true; }, 250);
+  };
+
+  let privacyAcknowledged = false;
+  try {
+    const savedAt = Number(window.localStorage.getItem(privacyStorageKey));
+    privacyAcknowledged = Number.isFinite(savedAt) && Date.now() - savedAt < privacyMaxAge;
+  } catch (_) {
+    privacyAcknowledged = false;
+  }
+
+  if (!privacyAcknowledged) showPrivacyNotice();
+
+  document.querySelector('[data-privacy-close]')?.addEventListener('click', () => {
+    try { window.localStorage.setItem(privacyStorageKey, String(Date.now())); } catch (_) { /* Volba platí alespoň pro tuto návštěvu. */ }
+    hidePrivacyNotice();
+  });
+
+  document.querySelector('[data-privacy-open]')?.addEventListener('click', showPrivacyNotice);
 })();
