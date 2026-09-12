@@ -1,0 +1,12 @@
+{
+  "name": "Selfíbudka.cz",
+  "short_name": "Selfíbudka",
+  "description": "Momenty, které stojí za sdílení.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f7f4",
+  "theme_color": "#ff6b6b",
+  "icons": [
+    {"src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}
