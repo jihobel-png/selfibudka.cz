@@ -1,6 +1,11 @@
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-Regular.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-SemiBold.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-Bold.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-ExtraBold.otf") format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+
 :root {
   --ink: #1f1f1f;
-  --muted: #5d5a57;
+  --muted: #4a4a4a;
   --paper: #f8f7f4;
   --white: #fff;
   --coral: #ff6b6b;
@@ -9,9 +14,8 @@
   --sage-light: #dfe8dc;
   --line: rgba(31,31,31,.15);
   --shadow: 0 24px 70px rgba(31,31,31,.13);
-  --radius: 28px;
-  --font: "Avenir Next", Avenir, "Century Gothic", Futura, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --script: "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+  --radius: 8px;
+  --font: "Montserrat", Arial, sans-serif;
   --container: min(1180px, calc(100% - 40px));
 }
 
@@ -19,7 +23,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--font); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 body.menu-open { overflow: hidden; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -282,4 +286,122 @@ p { margin-bottom: 1.2em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { transform: none; }
+}
+
+/* Vizuální systém podle dodaného brand manuálu */
+body { font-weight: 400; }
+h1, h2, h3 { font-weight: 800; letter-spacing: -.045em; }
+.site-header { background: rgba(248,247,244,.94); border-bottom: 1px solid rgba(31,31,31,.06); }
+.site-header.is-scrolled { background: rgba(248,247,244,.98); }
+.nav-wrap { min-height: 96px; }
+.brand { width: 258px; }
+.brand img, .footer-brand img { width: 100%; }
+.main-nav > a:not(.button) { font-size: .74rem; font-weight: 600; letter-spacing: .015em; }
+.main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.button { min-height: 50px; padding: 13px 24px; border-radius: 4px; box-shadow: none; font-size: .73rem; }
+.button:hover, .button:focus-visible { box-shadow: 0 10px 24px rgba(255,107,107,.22); }
+.button-small { min-height: 42px; padding: 10px 18px; }
+.eyebrow { font-size: .68rem; color: var(--coral); }
+
+.hero { min-height: 760px; padding-top: 96px; background: var(--paper); place-items: stretch; }
+.hero-inner { display: grid; min-height: 664px; padding: 72px 0 62px; grid-template-columns: .87fr 1.13fr; gap: clamp(30px, 5vw, 72px); align-items: center; }
+.hero-copy { position: relative; z-index: 2; max-width: 560px; }
+.hero h1 { max-width: 540px; margin: 0 0 28px; font-size: clamp(3.45rem, 5.25vw, 5.5rem); }
+.hero h1::after { display: inline-block; content: "♡"; margin-left: 14px; color: var(--coral); font-size: .73em; font-weight: 400; transform: rotate(8deg); }
+.hero-lead { max-width: 540px; margin-bottom: 28px; font-size: 1rem; line-height: 1.75; }
+.hero-tagline { width: min(300px, 78%); margin-top: 34px; mix-blend-mode: multiply; }
+.hero-collage { position: relative; min-height: 555px; }
+.polaroid { position: absolute; width: min(245px, 37%); margin: 0; padding: 9px 9px 38px; background: #fff; box-shadow: 0 24px 55px rgba(31,31,31,.2); }
+.polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 34%; filter: grayscale(1) contrast(1.04); }
+.polaroid span { position: absolute; right: 12px; bottom: 10px; left: 12px; color: var(--muted); font-size: .58rem; font-weight: 600; letter-spacing: .15em; text-align: center; text-transform: uppercase; }
+.polaroid-one { top: 72px; left: 0; transform: rotate(-7deg); }
+.polaroid-two { z-index: 2; top: 10px; left: 31%; transform: rotate(4deg); }
+.polaroid-three { top: 105px; right: 0; transform: rotate(8deg); }
+.hero-heart { position: absolute; z-index: 3; right: 1%; bottom: 18px; color: var(--coral); font-size: 5.7rem; line-height: 1; transform: rotate(9deg); }
+
+.step-card, .occasion, .inquiry-form, .practical-card, .backdrop-card, .backdrop-card figcaption, .privacy-bar-inner { border-radius: 6px; }
+.line-icon { border-radius: 4px; }
+.included-image::before { border-radius: 6px; }
+.included-image img { border-radius: 6px; }
+.gallery-item { border-radius: 3px; }
+.occasion p { margin-bottom: 24px; }
+.occasion-link { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 9px; padding-bottom: 3px; border-bottom: 1px solid currentColor; font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
+.occasion-link span { transition: transform .2s ease; }
+.occasion-link:hover span, .occasion-link:focus-visible span { transform: translateX(4px); }
+.inquiry-form input:not([type="checkbox"]), .inquiry-form select, .inquiry-form textarea { border-radius: 3px; }
+.script-note { font-family: var(--font); font-size: 1.05rem; font-style: italic; font-weight: 600; transform: none; }
+
+.footer-brand { width: 270px; padding: 8px; border-radius: 3px; }
+.footer-actions { display: flex; align-items: center; gap: 14px; }
+.instagram-icon { display: grid; width: 48px; height: 48px; color: var(--white); border: 1px solid rgba(255,255,255,.45); border-radius: 4px; place-items: center; transition: color .2s ease, background .2s ease; }
+.instagram-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.instagram-icon:hover, .instagram-icon:focus-visible { color: var(--ink); background: var(--white); }
+
+/* Svatební podstránka */
+.wedding-hero { padding: 156px 0 92px; overflow: hidden; background: var(--paper); }
+.wedding-hero-grid { display: grid; grid-template-columns: 1fr .72fr; gap: clamp(50px, 8vw, 110px); align-items: center; }
+.wedding-hero-copy { max-width: 680px; }
+.wedding-hero h1 { margin-bottom: 28px; font-size: clamp(3.25rem, 6vw, 6.2rem); }
+.wedding-hero h1::after { display: inline-block; content: "♡"; margin-left: 12px; color: var(--coral); font-size: .62em; font-weight: 400; transform: rotate(9deg); }
+.wedding-video-wrap { position: relative; width: min(410px, 100%); margin-inline: auto; }
+.wedding-video-wrap::before { position: absolute; z-index: 0; content: ""; inset: 24px -24px -24px 24px; background: var(--sage); }
+.wedding-video-wrap video { position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 9/16; object-fit: cover; background: var(--ink); border: 10px solid #fff; box-shadow: 0 26px 70px rgba(31,31,31,.18); }
+.video-label { position: absolute; z-index: 3; top: 24px; left: -40px; padding: 10px 14px; color: var(--ink); background: var(--coral); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; transform: rotate(-4deg); }
+.video-heart { position: absolute; z-index: 3; right: -48px; bottom: 45px; color: var(--coral); font-size: 5.5rem; line-height: 1; transform: rotate(10deg); }
+.wedding-story { background: var(--white); }
+.wedding-included { padding-bottom: clamp(100px, 12vw, 160px); }
+.wedding-polaroids { position: relative; min-height: 620px; }
+.wedding-polaroids figure { position: absolute; width: 61%; margin: 0; padding: 9px 9px 42px; background: #fff; box-shadow: 0 22px 60px rgba(31,31,31,.18); }
+.wedding-polaroids figure:first-child { top: 0; left: 0; transform: rotate(-5deg); }
+.wedding-polaroids figure:last-child { right: 0; bottom: 0; transform: rotate(5deg); }
+.wedding-polaroids img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(1) contrast(1.03); }
+.wedding-flow { background: var(--white); }
+
+@media (max-width: 1000px) {
+  .brand { width: 225px; }
+  .hero { min-height: auto; }
+  .hero-inner { min-height: 720px; grid-template-columns: .86fr 1.14fr; gap: 20px; }
+  .hero h1 { font-size: clamp(3.1rem, 6.5vw, 4.4rem); }
+  .hero-collage { min-height: 470px; }
+  .polaroid { width: 40%; padding: 7px 7px 31px; }
+  .polaroid-two { left: 30%; }
+  .wedding-hero-grid { grid-template-columns: 1fr .7fr; gap: 48px; }
+  .wedding-polaroids { width: min(600px, 100%); min-height: 650px; margin: 0 auto 30px; }
+}
+
+@media (max-width: 760px) {
+  .nav-wrap { min-height: 78px; }
+  .brand { width: 190px; }
+  .hero { min-height: auto; padding-top: 78px; }
+  .hero-inner { display: grid; min-height: 0; padding: 66px 0 52px; grid-template-columns: 1fr; gap: 32px; }
+  .hero-copy { max-width: none; }
+  .hero h1 { max-width: 560px; font-size: clamp(2.75rem, 13vw, 4.25rem); }
+  .hero-lead { font-size: .93rem; }
+  .hero-tagline { width: 250px; margin-top: 26px; }
+  .hero-collage { width: min(560px, 100%); min-height: 435px; margin-inline: auto; }
+  .polaroid { width: 41%; }
+  .polaroid-one { top: 76px; left: 1%; }
+  .polaroid-two { top: 6px; left: 30%; }
+  .polaroid-three { top: 86px; right: 1%; }
+  .hero-heart { right: 0; bottom: 10px; font-size: 4.5rem; }
+  .occasion { min-height: 300px; }
+  .footer-actions { align-items: flex-start; flex-direction: column; }
+  .wedding-hero { padding: 126px 0 82px; }
+  .wedding-hero-grid { grid-template-columns: 1fr; gap: 64px; }
+  .wedding-hero h1 { font-size: clamp(2.75rem, 13vw, 4.4rem); }
+  .wedding-video-wrap { width: min(350px, 84vw); }
+  .video-label { left: -18px; }
+  .video-heart { right: -30px; }
+  .wedding-polaroids { min-height: 540px; }
+}
+
+@media (max-width: 430px) {
+  .hero-collage { min-height: 360px; }
+  .polaroid { width: 43%; padding: 5px 5px 25px; }
+  .polaroid-one { top: 64px; }
+  .polaroid-two { left: 29%; }
+  .polaroid-three { top: 72px; }
+  .polaroid span { bottom: 7px; font-size: .48rem; }
+  .wedding-polaroids { min-height: 450px; }
+  .video-heart { right: -16px; bottom: 24px; }
 }

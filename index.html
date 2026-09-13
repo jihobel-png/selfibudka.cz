@@ -8,9 +8,9 @@
   <meta name="theme-color" content="#f8f7f4">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://selfibudka.cz/">
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/selfibudka-icon.png" type="image/png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="assets/images/hero-selfibudka.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/wedding-couple.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:type" content="website">
@@ -30,7 +30,7 @@
     "name": "Selfíbudka.cz",
     "url": "https://selfibudka.cz/",
     "image": "https://selfibudka.cz/assets/images/og-selfibudka.jpg",
-    "logo": "https://selfibudka.cz/assets/logo.svg",
+    "logo": "https://selfibudka.cz/assets/brand/selfibudka-logo.png",
     "description": "Pronájem fotokoutku s okamžitým tiskem, obsluhou, rekvizitami a grafikou na míru pro svatby, firemní akce, plesy a oslavy.",
     "telephone": "+420733148132",
     "email": "valesova.nikol@gmail.com",
@@ -52,14 +52,14 @@
   <header class="site-header" data-header>
     <div class="container nav-wrap">
       <a class="brand" href="#uvod" aria-label="Selfíbudka – domů">
-        <img src="assets/logo.svg" alt="Selfíbudka.cz" width="310" height="75">
+        <img src="assets/brand/selfibudka-logo.png" alt="Selfíbudka.cz – momenty, které stojí za sdílení" width="515" height="175">
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-button>
         <span></span><span></span><span></span><span class="sr-only">Otevřít menu</span>
       </button>
       <nav id="main-nav" class="main-nav" aria-label="Hlavní navigace" data-nav>
         <a href="#jak-to-funguje">Jak to funguje</a>
-        <a href="#prilezitosti">Pro jaké akce</a>
+        <a href="svatby.html">Svatby</a>
         <a href="#galerie">Galerie</a>
         <a href="#faq">FAQ</a>
         <a class="button button-small" href="#poptavka">Nezávazná poptávka</a>
@@ -69,18 +69,20 @@
 
   <main id="obsah">
     <section id="uvod" class="hero" aria-labelledby="hero-title">
-      <img class="hero-photo" src="assets/images/hero-selfibudka.jpg" alt="Připravená Selfíbudka s rekvizitami na venkovní oslavě" width="1600" height="1196" fetchpriority="high">
-      <div class="hero-shade"></div>
       <div class="container hero-inner">
-        <div class="hero-card">
-          <p class="eyebrow">Fotokoutek pro vaši událost</p>
+        <div class="hero-copy">
           <h1 id="hero-title">Momenty, které stojí za sdílení.</h1>
-          <p class="hero-lead">Póza, smích – a za pár sekund držíte vzpomínku v ruce. Přivezeme fotokoutek, pozadí, rekvizity i obsluhu. Vy si jen užijete večer.</p>
+          <p class="hero-lead">Selfíbudka zachytí ty nejkrásnější chvíle a promění je v nezapomenutelné vzpomínky. Fotíme, tiskneme a bavíme vaše hosty.</p>
           <div class="hero-actions">
-            <a class="button" href="#poptavka">Chci Selfíbudku</a>
-            <a class="text-link" href="#jak-to-funguje">Zjistit, jak to funguje <span aria-hidden="true">↓</span></a>
+            <a class="button" href="#poptavka">Chci ji zažít</a>
           </div>
-          <p class="script-note">Stiskni. Usměj se. Sdílej. <span aria-hidden="true">♡</span></p>
+          <img class="hero-tagline" src="assets/brand/selfibudka-tagline.png" alt="Stiskni. Usměj se. Sdílej." width="390" height="95">
+        </div>
+        <div class="hero-collage" aria-label="Svatební momenty zachycené Selfíbudkou">
+          <figure class="polaroid polaroid-one"><img src="assets/images/wedding-family.jpg" alt="Nevěsta s rodinou u Selfíbudky" width="720" height="1280"><span>společně</span></figure>
+          <figure class="polaroid polaroid-two"><img src="assets/images/wedding-friends.jpg" alt="Kamarádky se svatebními rekvizitami" width="720" height="1280"><span>naplno</span></figure>
+          <figure class="polaroid polaroid-three"><img src="assets/images/wedding-couple.jpg" alt="Novomanželé před Selfíbudkou" width="720" height="1280"><span>navždy</span></figure>
+          <span class="hero-heart" aria-hidden="true">♡</span>
         </div>
       </div>
     </section>
@@ -148,6 +150,7 @@
             <span class="occasion-index">01</span>
             <h3>Svatby</h3>
             <p>Od prvního přípitku až po půlnoční zábavu. Vlastní grafika fotek může ladit s oznámením i celým svatebním stylem.</p>
+            <a class="occasion-link" href="svatby.html">Objevit svatební Selfíbudku <span aria-hidden="true">→</span></a>
           </article>
           <article class="occasion occasion-sage reveal">
             <span class="occasion-index">02</span>
@@ -283,8 +286,8 @@
           <div class="contact-direct">
             <a href="tel:+420733148132"><span>Telefon</span>+420 733 148 132</a>
             <a href="mailto:valesova.nikol@gmail.com"><span>E-mail</span>valesova.nikol@gmail.com</a>
+            <a class="instagram-link" href="https://www.instagram.com/selfibudka.cz/" target="_blank" rel="noopener noreferrer"><span>Instagram</span>@selfibudka.cz</a>
           </div>
-          <p class="script-note">Těšíme se na vaši akci. <span aria-hidden="true">♡</span></p>
         </div>
         <form class="inquiry-form reveal" data-inquiry-form>
           <div class="form-row">
@@ -311,13 +314,13 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="footer-brand" href="#uvod"><img src="assets/logo.svg" alt="Selfíbudka.cz" width="310" height="75"></a>
+      <a class="footer-brand" href="#uvod"><img src="assets/brand/selfibudka-logo.png" alt="Selfíbudka.cz" width="515" height="175"></a>
       <p>Momenty, které stojí za sdílení.</p>
-      <a class="button button-ghost" href="#poptavka">Poptat termín</a>
+      <div class="footer-actions"><a class="instagram-icon" href="https://www.instagram.com/selfibudka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Selfíbudka na Instagramu"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a><a class="button button-ghost" href="#poptavka">Poptat termín</a></div>
     </div>
     <div class="container footer-bottom">
       <p>© <span data-year>2026</span> Selfíbudka.cz</p>
-      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="#galerie">Galerie</a><a href="#faq">FAQ</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a></nav>
+      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="svatby.html">Svatby</a><a href="#galerie">Galerie</a><a href="#faq">FAQ</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a></nav>
       <button class="footer-privacy-button" type="button" data-privacy-open>Nastavení soukromí</button>
     </div>
   </footer>
@@ -335,7 +338,7 @@
 
   <dialog class="lightbox" data-lightbox aria-label="Náhled fotografie">
     <button type="button" aria-label="Zavřít fotografii" data-lightbox-close>×</button>
-    <img src="" alt="">
+    <img alt="">
   </dialog>
 
   <script src="script.js" defer></script>
