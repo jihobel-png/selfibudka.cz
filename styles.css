@@ -331,7 +331,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -.045em; }
 .inquiry-form input:not([type="checkbox"]), .inquiry-form select, .inquiry-form textarea { border-radius: 3px; }
 .script-note { font-family: var(--font); font-size: 1.05rem; font-style: italic; font-weight: 600; transform: none; }
 
-.footer-brand { width: 270px; padding: 8px; border-radius: 3px; }
+.footer-brand { width: 270px; padding: 0; background: transparent; border-radius: 0; }
 .footer-actions { display: flex; align-items: center; gap: 14px; }
 .instagram-icon { display: grid; width: 48px; height: 48px; color: var(--white); border: 1px solid rgba(255,255,255,.45); border-radius: 4px; place-items: center; transition: color .2s ease, background .2s ease; }
 .instagram-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
