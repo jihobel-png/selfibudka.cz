@@ -309,7 +309,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -.045em; }
 .hero h1 { max-width: 540px; margin: 0 0 28px; font-size: clamp(3.45rem, 5.25vw, 5.5rem); }
 .hero h1::after { display: inline-block; content: "♡"; margin-left: 14px; color: var(--coral); font-size: .73em; font-weight: 400; transform: rotate(8deg); }
 .hero-lead { max-width: 540px; margin-bottom: 28px; font-size: 1rem; line-height: 1.75; }
-.hero-tagline { width: min(300px, 78%); margin-top: 34px; mix-blend-mode: multiply; }
+.hero-tagline { width: min(390px, 92%); margin: 42px 0 0 -4px; transform: rotate(-7deg); transform-origin: left center; }
 .hero-collage { position: relative; min-height: 555px; }
 .polaroid { position: absolute; width: min(245px, 37%); margin: 0; padding: 9px 9px 38px; background: #fff; box-shadow: 0 24px 55px rgba(31,31,31,.2); }
 .polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 34%; filter: grayscale(1) contrast(1.04); }
@@ -377,7 +377,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -.045em; }
   .hero-copy { max-width: none; }
   .hero h1 { max-width: 560px; font-size: clamp(2.75rem, 13vw, 4.25rem); }
   .hero-lead { font-size: .93rem; }
-  .hero-tagline { width: 250px; margin-top: 26px; }
+  .hero-tagline { width: min(330px, 90vw); margin: 34px 0 4px -2px; transform: rotate(-7deg); }
   .hero-collage { width: min(560px, 100%); min-height: 435px; margin-inline: auto; }
   .polaroid { width: 41%; }
   .polaroid-one { top: 76px; left: 1%; }
