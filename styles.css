@@ -335,8 +335,12 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.04em; }
 
 .footer-brand { width: 270px; padding: 0; background: transparent; border-radius: 0; }
 .footer-partners > span { display: block; margin-bottom: 10px; color: rgba(255,255,255,.58); font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.partner-list { display: flex; flex-wrap: wrap; gap: 10px; }
-.partner-list span { padding: 7px 11px; color: var(--white); border: 1px solid rgba(255,255,255,.24); border-radius: 999px; font-size: .72rem; font-weight: 600; }
+.partner-list { display: flex; min-height: 126px; align-items: center; flex-wrap: wrap; gap: clamp(20px, 3vw, 34px); }
+.partner-logo-link { display: inline-flex; min-height: 58px; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: opacity .2s ease, transform .2s ease; }
+.partner-logo-link:hover, .partner-logo-link:focus-visible { opacity: .78; transform: translateY(-2px); }
+.fotimetocime-mark { display: inline-flex; align-items: baseline; color: var(--white); font-size: clamp(1.15rem, 2vw, 1.55rem); font-style: italic; font-weight: 600; letter-spacing: -.055em; white-space: nowrap; }
+.fotimetocime-mark > span { margin-right: .08em; color: var(--coral); font-size: 1.05em; font-style: normal; font-weight: 700; }
+.partner-luc img { width: auto; height: 120px; object-fit: contain; }
 .footer-actions { display: flex; align-items: center; gap: 14px; }
 .social-links { display: flex; gap: 8px; }
 .social-icon { display: grid; width: 46px; height: 46px; color: var(--white); border: 1px solid rgba(255,255,255,.4); border-radius: 50%; place-items: center; transition: color .2s ease, background .2s ease; }
