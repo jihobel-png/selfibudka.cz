@@ -432,3 +432,95 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.04em; }
   .service-visual { min-height: 430px; }
   .video-heart { right: -16px; bottom: 24px; }
 }
+
+/* Mobilní navigace musí v Safari vždy překrýt celý obsah stránky. */
+@media (max-width: 1000px) {
+  body.menu-open .site-header {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    background: var(--paper);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 2;
+  }
+
+  .main-nav {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100%;
+    padding-top: max(120px, calc(env(safe-area-inset-top) + 104px));
+    padding-right: max(34px, calc(env(safe-area-inset-right) + 28px));
+    padding-bottom: max(40px, calc(env(safe-area-inset-bottom) + 28px));
+    padding-left: max(34px, calc(env(safe-area-inset-left) + 28px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: var(--paper);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .main-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .menu-button {
+    z-index: 3;
+  }
+
+  body.menu-open .privacy-bar {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Na telefonu je celá patička opticky vycentrovaná jako jeden celek. */
+@media (max-width: 760px) {
+  .site-footer {
+    text-align: center;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    justify-items: center;
+  }
+
+  .footer-brand {
+    margin-inline: auto;
+  }
+
+  .footer-partners,
+  .footer-actions {
+    width: 100%;
+  }
+
+  .footer-partners > span {
+    text-align: center;
+  }
+
+  .partner-list,
+  .social-links,
+  .footer-bottom nav {
+    justify-content: center;
+  }
+
+  .footer-actions {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-privacy-button {
+    margin-inline: auto;
+  }
+}
