@@ -352,7 +352,8 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.04em; }
 .wedding-hero { padding: 156px 0 92px; overflow: hidden; background: var(--paper); }
 .wedding-hero-grid { display: grid; grid-template-columns: 1fr .72fr; gap: clamp(50px, 8vw, 110px); align-items: center; }
 .wedding-hero-copy { max-width: 680px; }
-.wedding-hero h1 { margin-bottom: 28px; font-size: clamp(3.25rem, 6vw, 6.2rem); }
+.wedding-hero h1 { margin-bottom: 28px; font-size: clamp(2.65rem, 4.35vw, 4.7rem); line-height: 1.04; }
+.wedding-hero .claim-line { display: block; white-space: nowrap; }
 .wedding-hero h1::after { content: none; }
 .coral-heart { display: inline-block; margin-left: .08em; color: var(--coral); font-weight: 400; transform: rotate(8deg); }
 .wedding-video-wrap { position: relative; width: min(410px, 100%); margin-inline: auto; }
@@ -412,7 +413,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -.04em; }
   .footer-actions { align-items: flex-start; flex-direction: column; }
   .wedding-hero { padding: 126px 0 82px; }
   .wedding-hero-grid { grid-template-columns: 1fr; gap: 64px; }
-  .wedding-hero h1 { font-size: clamp(2.75rem, 13vw, 4.4rem); }
+  .wedding-hero h1 { font-size: clamp(2rem, 8.5vw, 2.8rem); line-height: 1.08; }
   .wedding-video-wrap { width: min(350px, 84vw); }
   .video-label { left: -18px; }
   .video-heart { right: -30px; }
