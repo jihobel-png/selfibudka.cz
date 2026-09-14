@@ -80,7 +80,7 @@
       'Děkuji.'
     ];
     const subject = `Poptávka Selfíbudky – ${value('type')} ${dateValue ? `(${formattedDate})` : ''}`.trim();
-    const href = `mailto:valesova.nikol@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    const href = `mailto:info@selfibudka.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
     const status = form.querySelector('[data-form-status]');
     if (status) status.textContent = 'Otevírám e-mail s vaší poptávkou…';
     window.location.href = href;

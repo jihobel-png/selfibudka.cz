@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Selfíbudka | Fotokoutek na svatby, večírky a oslavy</title>
+  <title>Selfíbudka.cz | Fotokoutek na svatby, večírky a oslavy</title>
   <meta name="description" content="Fotokoutek s okamžitým tiskem, rekvizitami, obsluhou a grafikou na míru. Pro svatby, firemní akce, plesy i oslavy. Poptávka nezávazně.">
   <meta name="theme-color" content="#f8f7f4">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/brand/selfibudka-icon.png?v=20260913-transparent" type="image/png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" as="image" href="assets/images/wedding-couple.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=20260913-transparent">
+  <link rel="stylesheet" href="styles.css?v=20260914-nikol">
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Selfíbudka – momenty, které stojí za sdílení">
@@ -32,8 +32,21 @@
     "image": "https://selfibudka.cz/assets/images/og-selfibudka.jpg",
     "logo": "https://selfibudka.cz/assets/brand/selfibudka-logo.png",
     "description": "Pronájem fotokoutku s okamžitým tiskem, obsluhou, rekvizitami a grafikou na míru pro svatby, firemní akce, plesy a oslavy.",
-    "telephone": "+420733148132",
-    "email": "valesova.nikol@gmail.com",
+    "legalName": "Jan Hobel",
+    "telephone": "+420721655200",
+    "email": "info@selfibudka.cz",
+    "identifier": "IČO 19077599",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Na Palcátech 621",
+      "postalCode": "331 41",
+      "addressLocality": "Kralovice",
+      "addressCountry": "CZ"
+    },
+    "sameAs": [
+      "https://www.instagram.com/selfibudka.cz/",
+      "https://www.facebook.com/profile.php?id=61592149420111"
+    ],
     "areaServed": {"@type":"Country","name":"Česká republika"},
     "priceRange": "Cena na vyžádání",
     "makesOffer": {
@@ -59,9 +72,10 @@
       </button>
       <nav id="main-nav" class="main-nav" aria-label="Hlavní navigace" data-nav>
         <a href="#jak-to-funguje">Jak to funguje</a>
-        <a href="svatby.html">Svatby</a>
+        <a href="#typy-akci">Typy akcí</a>
         <a href="#galerie">Galerie</a>
-        <a href="#faq">FAQ</a>
+        <a href="#faq">Nejčastější dotazy</a>
+        <a href="#poptavka">Kontakt</a>
         <a class="button button-small" href="#poptavka">Nezávazná poptávka</a>
       </nav>
     </div>
@@ -74,7 +88,7 @@
           <h1 id="hero-title">Momenty, které stojí za sdílení.</h1>
           <p class="hero-lead">Selfíbudka zachytí ty nejkrásnější chvíle a promění je v nezapomenutelné vzpomínky. Fotíme, tiskneme a bavíme vaše hosty.</p>
           <div class="hero-actions">
-            <a class="button" href="#poptavka">Chci ji zažít</a>
+            <a class="button" href="#poptavka">Chci Selfíbudku</a>
           </div>
           <img class="hero-tagline" src="assets/brand/selfibudka-tagline.png?v=20260913-tagline" alt="Stiskni. Usměj se. Sdílej." width="390" height="95">
         </div>
@@ -103,8 +117,8 @@
           <h2>Víc než jen fotka</h2>
         </div>
         <div class="intro-copy reveal">
-          <p class="large-copy">Selfíbudka je místo, kde se potkají lidé, kteří by se jinak možná ani společně nevyfotili. Během chvíle odhodí ostych, vezmou rekvizitu a vznikne snímek s vlastním příběhem.</p>
-          <p>Každý host si může odnést vytištěnou fotografii. Vy navíc získáte digitální galerii, ke které se budete vracet i po akci.</p>
+          <p class="large-copy">Ostych stranou, rekvizity do ruky a úsměv, prosím! Selfíbudka spojí před objektivem i nečekané dvojice a zachytí momenty, které se nedají naplánovat a stojí za to sdílet.</p>
+          <p>Hosté si odnesou vytištěnou fotku. Vám zůstane digitální galerie a fotoalbum plné vzpomínek, vzkazů a momentů, ke kterým se budete rádi vracet.</p>
         </div>
       </div>
     </section>
@@ -139,34 +153,33 @@
       </div>
     </section>
 
-    <section id="prilezitosti" class="section occasions-section">
+    <section id="typy-akci" class="section occasions-section">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Pro každou příležitost</p>
-          <h2>Když chcete hosty opravdu rozhýbat</h2>
+          <p class="eyebrow">Pro chvíle, které stojí za sdílení</p>
+          <h2>Když chcete hostům dopřát víc než jen program</h2>
         </div>
         <div class="occasion-grid">
-          <article class="occasion occasion-coral reveal">
-            <span class="occasion-index">01</span>
+          <a class="occasion occasion-coral reveal" href="svatby.html">
             <h3>Svatby</h3>
-            <p>Od prvního přípitku až po půlnoční zábavu. Vlastní grafika fotek může ladit s oznámením i celým svatebním stylem.</p>
-            <a class="occasion-link" href="svatby.html">Objevit svatební Selfíbudku <span aria-hidden="true">→</span></a>
-          </article>
-          <article class="occasion occasion-sage reveal">
-            <span class="occasion-index">02</span>
+            <p>Pro spontánní zábavu i vzpomínky, které si hosté odnesou domů. Grafiku fotografií sladíme s oznámením i stylem vaší svatby a na přání připravíme také fotoalbum plné osobních vzkazů.</p>
+            <span class="occasion-link">Objevit svatební Selfíbudku <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="occasion occasion-sage reveal" href="firemni-akce.html">
             <h3>Firemní akce</h3>
-            <p>Večírek, konference nebo aktivace značky. Fotografie, rozhraní i výstup přizpůsobíme vašemu brandingu.</p>
-          </article>
-          <article class="occasion occasion-dark reveal">
-            <span class="occasion-index">03</span>
-            <h3>Plesy a festivaly</h3>
-            <p>Rychlý provoz, spousta hostů a fotky, které okamžitě putují mezi přátele i na sociální sítě.</p>
-          </article>
-          <article class="occasion occasion-cream reveal">
-            <span class="occasion-index">04</span>
+            <p>Večírek, konference nebo aktivace značky. Grafiku výtisků sladíme s vaším brandingem a hostům dopřejeme zábavu, která přirozeně propojuje.</p>
+            <span class="occasion-link">Selfíbudka pro firmy <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="occasion occasion-cream reveal" href="oslavy.html">
             <h3>Oslavy a narozeniny</h3>
-            <p>Přirozená zábava pro malé i velké. Vybereme rekvizity a pozadí, které sednou tématu i hostům.</p>
-          </article>
+            <p>Přirozená zábava pro malé i velké oslavy. Vybereme rekvizity a pozadí, které sednou tématu i vašim hostům.</p>
+            <span class="occasion-link">Selfíbudka na oslavu <span aria-hidden="true">→</span></span>
+          </a>
+          <a class="occasion occasion-dark reveal" href="plesy-festivaly.html">
+            <h3>Plesy a festivaly</h3>
+            <p>Spolehlivý provoz i pro větší počet hostů. Vyladíme režim focení, tisk i grafiku tak, aby Selfíbudka zapadla do rytmu celé akce.</p>
+            <span class="occasion-link">Selfíbudka pro velké akce <span aria-hidden="true">→</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -174,7 +187,7 @@
     <section class="section included-section">
       <div class="container included-grid">
         <div class="included-image reveal">
-          <img src="assets/images/gallery-cedulky.jpg" alt="Vtipné cedulky a rekvizity pro hosty fotokoutku" width="1000" height="1334" loading="lazy">
+          <img src="assets/images/benefits-guests.jpg" alt="Hosté si užívají focení s rekvizitami u Selfíbudky" width="360" height="480" loading="lazy">
           <div class="floating-badge"><strong>Stačí se postavit</strong><span>o zbytek se postaráme</span></div>
         </div>
         <div class="included-content reveal">
@@ -215,14 +228,21 @@
         <div class="section-heading centered reveal">
           <p class="eyebrow">Selfíbudka v akci</p>
           <h2>Připravená na vaše hosty</h2>
-          <p>Skutečná sestava, rekvizity a detaily z realizace.</p>
+          <p>Skutečná sestava, rekvizity, detaily z realizace a vy.</p>
         </div>
         <div class="gallery-grid" data-gallery>
           <button class="gallery-item gallery-wide reveal" type="button" data-full="assets/images/hero-selfibudka.jpg" data-alt="Kompletně připravená Selfíbudka s rekvizitami"><img src="assets/images/hero-selfibudka.jpg" alt="Kompletně připravená Selfíbudka s rekvizitami" width="1600" height="1196" loading="lazy"><span>Otevřít fotografii</span></button>
-          <button class="gallery-item gallery-tall reveal" type="button" data-full="assets/images/gallery-fotokoutek.jpg" data-alt="Fotokoutek a stojany s rekvizitami"><img src="assets/images/gallery-fotokoutek.jpg" alt="Fotokoutek a stojany s rekvizitami" width="1000" height="1334" loading="lazy"><span>Otevřít fotografii</span></button>
-          <button class="gallery-item reveal" type="button" data-full="assets/images/gallery-rekvizity.jpg" data-alt="Výběr klobouků, brýlí a masek"><img src="assets/images/gallery-rekvizity.jpg" alt="Výběr klobouků, brýlí a masek" width="1000" height="1334" loading="lazy"><span>Otevřít fotografii</span></button>
-          <button class="gallery-item reveal" type="button" data-full="assets/images/gallery-priprava.jpg" data-alt="Příprava fotokoutku před akcí"><img src="assets/images/gallery-priprava.jpg" alt="Příprava fotokoutku před akcí" width="1400" height="1050" loading="lazy"><span>Otevřít fotografii</span></button>
+          <button class="gallery-item gallery-tall reveal" type="button" data-full="assets/images/gallery-props-signs.jpg" data-alt="Výběr vtipných cedulek a rekvizit"><img src="assets/images/gallery-props-signs.jpg" alt="Výběr vtipných cedulek a rekvizit" width="360" height="480" loading="lazy"><span>Otevřít fotografii</span></button>
+          <button class="gallery-item reveal" type="button" data-full="assets/images/gallery-pink-phone.jpg" data-alt="Růžový telefon, plameňák a disco koule mezi rekvizitami"><img src="assets/images/gallery-pink-phone.jpg" alt="Růžový telefon, plameňák a disco koule mezi rekvizitami" width="360" height="480" loading="lazy"><span>Otevřít fotografii</span></button>
+          <button class="gallery-item reveal" type="button" data-full="assets/images/gallery-heart-glasses.jpg" data-alt="Bílé brýle ve tvaru srdce připravené pro hosty"><img src="assets/images/gallery-heart-glasses.jpg" alt="Bílé brýle ve tvaru srdce připravené pro hosty" width="360" height="480" loading="lazy"><span>Otevřít fotografii</span></button>
         </div>
+      </div>
+    </section>
+
+    <section id="recenze" class="reviews-section" hidden aria-hidden="true">
+      <div class="container">
+        <h2>Co o Selfíbudce říkají hosté</h2>
+        <div data-reviews-list></div>
       </div>
     </section>
 
@@ -284,9 +304,10 @@
           <h2>Máte termín?<br>My máme Selfíbudku.</h2>
           <p>Pošlete nám základní informace o akci. Ozveme se s dostupností a nabídkou sestavenou právě pro vás.</p>
           <div class="contact-direct">
-            <a href="tel:+420733148132"><span>Telefon</span>+420 733 148 132</a>
-            <a href="mailto:valesova.nikol@gmail.com"><span>E-mail</span>valesova.nikol@gmail.com</a>
+            <a href="tel:+420721655200"><span>Telefon</span>+420 721 655 200</a>
+            <a href="mailto:info@selfibudka.cz"><span>E-mail</span>info@selfibudka.cz</a>
             <a class="instagram-link" href="https://www.instagram.com/selfibudka.cz/" target="_blank" rel="noopener noreferrer"><span>Instagram</span>@selfibudka.cz</a>
+            <a href="https://www.facebook.com/profile.php?id=61592149420111" target="_blank" rel="noopener noreferrer"><span>Facebook</span>Selfíbudka.cz</a>
           </div>
         </div>
         <form class="inquiry-form reveal" data-inquiry-form>
@@ -314,13 +335,13 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <a class="footer-brand" href="#uvod"><img src="assets/brand/selfibudka-logo-white.png?v=20260913-transparent" alt="Selfíbudka.cz" width="515" height="175"></a>
-      <p>Momenty, které stojí za sdílení.</p>
-      <div class="footer-actions"><a class="instagram-icon" href="https://www.instagram.com/selfibudka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Selfíbudka na Instagramu"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a><a class="button button-ghost" href="#poptavka">Poptat termín</a></div>
+      <a class="footer-brand" href="#uvod"><img src="assets/brand/selfibudka-logo-white-coral.png?v=20260914" alt="Selfíbudka.cz – momenty, které stojí za sdílení" width="515" height="175"></a>
+      <div class="footer-partners"><span>S kým tvoříme momenty</span><div class="partner-list"><span>Fotimetocime</span><span>Svatby od Luc</span></div></div>
+      <div class="footer-actions"><div class="social-links"><a class="social-icon" href="https://www.instagram.com/selfibudka.cz/" target="_blank" rel="noopener noreferrer" aria-label="Selfíbudka na Instagramu"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=61592149420111" target="_blank" rel="noopener noreferrer" aria-label="Selfíbudka na Facebooku"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v2H6v4h3v7h4v-7h3.5l.5-4h-4V9c0-.7.3-1 1-1Z"></path></svg></a></div><a class="button button-ghost" href="#poptavka">Poptat termín</a></div>
     </div>
     <div class="container footer-bottom">
       <p>© <span data-year>2026</span> Selfíbudka.cz</p>
-      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="svatby.html">Svatby</a><a href="#galerie">Galerie</a><a href="#faq">FAQ</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a></nav>
+      <nav aria-label="Patička"><a href="#jak-to-funguje">Jak to funguje</a><a href="#typy-akci">Typy akcí</a><a href="#galerie">Galerie</a><a href="#faq">Nejčastější dotazy</a><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a><a href="cookies.html">Cookies</a></nav>
       <button class="footer-privacy-button" type="button" data-privacy-open>Nastavení soukromí</button>
     </div>
   </footer>
@@ -341,6 +362,6 @@
     <img alt="">
   </dialog>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20260914-nikol" defer></script>
 </body>
 </html>
