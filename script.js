@@ -161,7 +161,7 @@
         'Svolení platí 5 let od udělení, nejdéle do odvolání. Zahrnuje běžné technické úpravy, ne však placenou reklamu, prodej, propagaci jiné značky ani jiný kanál.',
         '',
         ...(usesSocialNetwork ? ['Při zveřejnění na Instagramu nebo Facebooku bude fotografie zpřístupněna společnosti Meta Platforms Ireland Limited a zpracována podle https://www.facebook.com/privacy/policy/, včetně tam popsaných mezinárodních přenosů. Uživatelé mohou obsah dále sdílet či stáhnout; úplné odstranění všech kopií nemusí být v moci Selfíbudky.', ''] : []),
-        'Souhlas mohu kdykoli odvolat na info@selfibudka.cz s účinky do budoucna. Seznámil/a jsem se s informacemi na https://selfibudka.cz/ochrana-osobnich-udaju.html.',
+        'Souhlas mohu kdykoli odvolat na info@selfibudka.cz s účinky do budoucna. Seznámil/a jsem se s informacemi na https://selfibudka.cz/ochrana-osobnich-udaju.',
         '',
         'Verze znění: SB-FOTO-2026-09-15-01',
         `Potvrzeno: ${submittedAt}`,

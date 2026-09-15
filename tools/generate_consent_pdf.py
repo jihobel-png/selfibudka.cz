@@ -27,8 +27,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PDF_PATH = ROOT / "output/pdf/souhlas-se-zverejnenim-fotografie-selfibudka.pdf"
 QR_PATH = ROOT / "assets/brand/qr-souhlas-fotografie.svg"
 LOGO_PATH = ROOT / "assets/brand/selfibudka-logo.png"
-FORM_URL = "https://selfibudka.cz/souhlas-se-zverejnenim-fotografie.html"
-PRIVACY_URL = "https://selfibudka.cz/ochrana-osobnich-udaju.html"
+FORM_URL = "https://selfibudka.cz/souhlas-se-zverejnenim-fotografie"
+PRIVACY_URL = "https://selfibudka.cz/ochrana-osobnich-udaju"
 
 INK = colors.HexColor("#1F1F1F")
 MUTED = colors.HexColor("#4A4A4A")

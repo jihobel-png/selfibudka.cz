@@ -99,12 +99,13 @@ p { margin-bottom: 1.2em; }
 
 .occasions-section { background: var(--white); }
 .occasion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 54px; }
-.occasion { position: relative; display: block; min-height: 300px; padding: clamp(34px, 5vw, 58px); overflow: hidden; border-radius: 22px; text-decoration: none; transition: transform .2s ease; }
+.occasion { position: relative; isolation: isolate; display: block; min-height: 300px; padding: clamp(34px, 5vw, 58px); overflow: hidden; border-radius: 22px; text-decoration: none; transition: transform .2s ease; }
 .occasion:hover, .occasion:focus-visible { transform: translateY(-3px); }
 .occasion-index { display: block; margin-bottom: 62px; font-size: .75rem; font-weight: 800; opacity: .65; }
 .occasion h3 { font-size: clamp(2rem, 4vw, 3.4rem); }
 .occasion p { max-width: 520px; margin-bottom: 0; }
-.occasion::after { position: absolute; content: "♡"; right: 18px; bottom: -58px; color: rgba(255,255,255,.3); font-size: 11rem; transform: rotate(10deg); }
+.occasion::after { position: absolute; z-index: 0; content: "♡"; right: 18px; bottom: -58px; color: rgba(255,255,255,.22); font-size: 11rem; pointer-events: none; transform: rotate(10deg); }
+.occasion > * { position: relative; z-index: 1; }
 .occasion-coral { background: var(--coral); }
 .occasion-sage { background: var(--sage); }
 .occasion-dark { color: var(--white); background: var(--ink); }
@@ -180,6 +181,10 @@ p { margin-bottom: 1.2em; }
 .inquiry-form textarea { min-height: 120px; resize: vertical; }
 .inquiry-form input:focus, .inquiry-form select:focus, .inquiry-form textarea:focus { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(255,107,107,.16); }
 .consent-info { margin: 4px 0 22px; color: var(--muted); font-size: .72rem; }
+.inquiry-form .inquiry-consent { display: flex; margin: 4px 0 22px; align-items: flex-start; gap: 11px; color: var(--muted); font-size: .72rem; font-weight: 400; line-height: 1.55; cursor: pointer; }
+.inquiry-consent input { width: 19px; height: 19px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--coral-dark); }
+.inquiry-consent a { color: inherit; text-underline-offset: 2px; }
+.inquiry-consent:has(input:focus-visible) { outline: 3px solid rgba(255,107,107,.22); outline-offset: 4px; }
 .form-note { margin: 12px 0 0; color: var(--muted); font-size: .68rem; text-align: center; }
 
 .site-footer { padding: 70px 0 26px; color: var(--white); background: var(--ink); }
