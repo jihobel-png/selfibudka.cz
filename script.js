@@ -23,6 +23,78 @@
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   window.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
+  const cleanVisibleUrl = () => {
+    if (!window.location.hash) return;
+    window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}`);
+  };
+
+  const scrollToSection = (sectionId, behavior = 'smooth') => {
+    const target = document.getElementById(sectionId);
+    if (!target) return false;
+    target.scrollIntoView({ behavior, block: 'start' });
+    return true;
+  };
+
+  const pendingSectionKey = 'selfibudka_pending_section';
+  const pendingSection = window.sessionStorage.getItem(pendingSectionKey);
+  if (pendingSection) {
+    window.sessionStorage.removeItem(pendingSectionKey);
+    window.requestAnimationFrame(() => {
+      scrollToSection(pendingSection, 'auto');
+      cleanVisibleUrl();
+    });
+  } else if (window.location.hash) {
+    const initialSection = decodeURIComponent(window.location.hash.slice(1));
+    window.requestAnimationFrame(() => {
+      scrollToSection(initialSection, 'auto');
+      cleanVisibleUrl();
+    });
+  }
+
+  window.addEventListener('hashchange', () => {
+    if (!window.location.hash) return;
+    const sectionId = decodeURIComponent(window.location.hash.slice(1));
+    window.requestAnimationFrame(() => {
+      scrollToSection(sectionId, 'auto');
+      cleanVisibleUrl();
+    });
+  });
+
+  document.querySelectorAll('a[href*="#"]').forEach(link => {
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin !== window.location.origin || !destination.hash) return;
+    link.dataset.scrollSection = decodeURIComponent(destination.hash.slice(1));
+    link.setAttribute('href', `${destination.pathname}${destination.search}`);
+  });
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[data-scroll-section]');
+    if (!link) return;
+
+    const destination = new URL(link.href, window.location.href);
+    const sectionId = link.dataset.scrollSection;
+    if (!sectionId) return;
+    const normalizePath = path => path
+      .replace(/\/index\.html$/, '/')
+      .replace(/\.html$/, '')
+      .replace(/\/$/, '') || '/';
+    const sameDocument = normalizePath(destination.pathname) === normalizePath(window.location.pathname);
+
+    event.preventDefault();
+    if (sameDocument && scrollToSection(sectionId)) {
+      if (link.classList.contains('skip-link')) {
+        const target = document.getElementById(sectionId);
+        target?.setAttribute('tabindex', '-1');
+        target?.focus({ preventScroll: true });
+      }
+      cleanVisibleUrl();
+      return;
+    }
+
+    window.sessionStorage.setItem(pendingSectionKey, sectionId);
+    window.location.assign(`${destination.pathname}${destination.search}`);
+  });
+
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver(entries => {
