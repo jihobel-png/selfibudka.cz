@@ -10,6 +10,9 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
 RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
 
+# Hlavni sekce maji vlastni citelne adresy bez hashtagu.
+RewriteRule ^(?:jak-to-funguje|typy-akci|galerie|nejcastejsi-dotazy|kontakt)/?$ index.html [L]
+
 # Existující statické HTML soubory obslouží čisté adresy bez změny URL.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -23,11 +23,6 @@
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   window.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
-  const cleanVisibleUrl = () => {
-    if (!window.location.hash) return;
-    window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}`);
-  };
-
   const scrollToSection = (sectionId, behavior = 'smooth') => {
     const target = document.getElementById(sectionId);
     if (!target) return false;
@@ -35,19 +30,57 @@
     return true;
   };
 
+  const normalizePath = path => path
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '') || '/';
+
+  const sectionRoutes = new Map([
+    ['uvod', '/'],
+    ['jak-to-funguje', '/jak-to-funguje'],
+    ['typy-akci', '/typy-akci'],
+    ['galerie', '/galerie'],
+    ['faq', '/nejcastejsi-dotazy'],
+    ['poptavka', '/kontakt']
+  ]);
+  const routeSections = new Map(
+    [...sectionRoutes].map(([sectionId, path]) => [normalizePath(path), sectionId])
+  );
+  const isHomepageDocument = Boolean(document.getElementById('jak-to-funguje'));
+
+  const sectionForCurrentPath = () => routeSections.get(normalizePath(window.location.pathname));
+
+  const setSectionUrl = (sectionId, mode = 'replace', route = isHomepageDocument ? sectionRoutes.get(sectionId) : null) => {
+    if (!route) {
+      if (window.location.hash) {
+        window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}`);
+      }
+      return;
+    }
+
+    const nextUrl = `${route}${window.location.search}`;
+    if (normalizePath(window.location.pathname) === normalizePath(route) && !window.location.hash) return;
+
+    const method = mode === 'push' ? 'pushState' : 'replaceState';
+    window.history[method]({ ...window.history.state, selfibudkaSection: sectionId }, '', nextUrl);
+  };
+
   const pendingSectionKey = 'selfibudka_pending_section';
   const pendingSection = window.sessionStorage.getItem(pendingSectionKey);
-  if (pendingSection) {
-    window.sessionStorage.removeItem(pendingSectionKey);
+  if (pendingSection) window.sessionStorage.removeItem(pendingSectionKey);
+  const routedSection = sectionForCurrentPath();
+  if (routedSection && document.getElementById(routedSection)) {
+    window.requestAnimationFrame(() => scrollToSection(routedSection, 'auto'));
+  } else if (pendingSection) {
     window.requestAnimationFrame(() => {
       scrollToSection(pendingSection, 'auto');
-      cleanVisibleUrl();
+      setSectionUrl(pendingSection);
     });
   } else if (window.location.hash) {
     const initialSection = decodeURIComponent(window.location.hash.slice(1));
     window.requestAnimationFrame(() => {
       scrollToSection(initialSection, 'auto');
-      cleanVisibleUrl();
+      setSectionUrl(initialSection);
     });
   }
 
@@ -56,15 +89,27 @@
     const sectionId = decodeURIComponent(window.location.hash.slice(1));
     window.requestAnimationFrame(() => {
       scrollToSection(sectionId, 'auto');
-      cleanVisibleUrl();
+      setSectionUrl(sectionId);
     });
+  });
+
+  window.addEventListener('popstate', () => {
+    const sectionId = sectionForCurrentPath();
+    if (sectionId && document.getElementById(sectionId)) {
+      window.requestAnimationFrame(() => scrollToSection(sectionId, 'auto'));
+    }
   });
 
   document.querySelectorAll('a[href*="#"]').forEach(link => {
     const destination = new URL(link.href, window.location.href);
     if (destination.origin !== window.location.origin || !destination.hash) return;
-    link.dataset.scrollSection = decodeURIComponent(destination.hash.slice(1));
-    link.setAttribute('href', `${destination.pathname}${destination.search}`);
+    const sectionId = decodeURIComponent(destination.hash.slice(1));
+    const mappedRoute = sectionRoutes.get(sectionId);
+    const destinationIsHomepage = normalizePath(destination.pathname) === '/';
+    const sectionRoute = mappedRoute && (isHomepageDocument || destinationIsHomepage) ? mappedRoute : '';
+    link.dataset.scrollSection = sectionId;
+    if (sectionRoute) link.dataset.scrollRoute = sectionRoute;
+    link.setAttribute('href', sectionRoute || `${destination.pathname}${destination.search}`);
   });
 
   document.addEventListener('click', event => {
@@ -74,11 +119,10 @@
     const destination = new URL(link.href, window.location.href);
     const sectionId = link.dataset.scrollSection;
     if (!sectionId) return;
-    const normalizePath = path => path
-      .replace(/\/index\.html$/, '/')
-      .replace(/\.html$/, '')
-      .replace(/\/$/, '') || '/';
-    const sameDocument = normalizePath(destination.pathname) === normalizePath(window.location.pathname);
+    const sectionRoute = link.dataset.scrollRoute || '';
+    const sameDocument = Boolean(document.getElementById(sectionId)) && (
+      Boolean(sectionRoute) || normalizePath(destination.pathname) === normalizePath(window.location.pathname)
+    );
 
     event.preventDefault();
     if (sameDocument && scrollToSection(sectionId)) {
@@ -87,12 +131,12 @@
         target?.setAttribute('tabindex', '-1');
         target?.focus({ preventScroll: true });
       }
-      cleanVisibleUrl();
+      setSectionUrl(sectionId, sectionRoute ? 'push' : 'replace', sectionRoute || null);
       return;
     }
 
     window.sessionStorage.setItem(pendingSectionKey, sectionId);
-    window.location.assign(`${destination.pathname}${destination.search}`);
+    window.location.assign(sectionRoute || `${destination.pathname}${destination.search}`);
   });
 
   const revealItems = document.querySelectorAll('.reveal');
